@@ -1,0 +1,254 @@
+{
+    "apis": [
+        {
+            "name": "Show",
+            "parameters": {
+                "mainField1": "Song's Name",
+                "mainField2": "Artist's Name",
+                "mediaTrack": "2/7",
+                "mediaClock": "03:07",
+                "softButtons": [
+                    {
+                        "softButtonID": 1022,
+                        "image": {
+                            "value": "0xD0",
+                            "imageType": "STATIC"
+                        },
+                        "type": "IMAGE",
+                        "isHighlighted": false,
+                        "systemAction": "DEFAULT_ACTION"
+                    },
+                    {
+                        "softButtonID": 1023,
+                        "text": "本地",
+                        "type": "TEXT",
+                        "isHighlighted": false,
+                        "systemAction": "DEFAULT_ACTION"
+                    },
+                    {
+                        "softButtonID": 1024,
+                        "text": "歌单",
+                        "type": "TEXT",
+                        "isHighlighted": false,
+                        "systemAction": "DEFAULT_ACTION"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "AddCommand",
+            "parameters": {
+                "cmdID": 1011,
+                "vrCommands": [
+                    "随便听听"
+                ],
+                "menuParams": {
+                    "position": 0,
+                    "menuName": "随便听听",
+                    "parentID": 0
+                }
+            }
+        },
+        {
+            "parameters": {
+                "buttonName": "SEEKLEFT"
+            },
+            "name": "SubscribeButton"
+        },
+        {
+            "parameters": {
+                "buttonName": "SEEKRIGHT"
+            },
+            "name": "SubscribeButton"
+        },
+        {
+            "name": "CreateInteractionChoiceSet",
+            "parameters": {
+                "choiceSet": [
+                    {
+                        "vrCommands": [
+                            "我喜欢听"
+                        ],
+                        "choiceID": 1011,
+                        "menuName": "我喜欢听"
+                    },
+                    {
+                        "vrCommands": [
+                            "福特定制"
+                        ],
+                        "choiceID": 1012,
+                        "menuName": "福特定制"
+                    }
+                ],
+                "interactionChoiceSetID": 1212
+            }
+        }
+    ],
+    "actions": [
+        {
+            "trigger": "button",
+            "identifier": 1022,
+            "handler": {
+                "name": "Show",
+                "parameters": {
+                    "softButtons": [
+                        {
+                            "softButtonID": 1022,
+                            "image": {
+                                "value": "0xCF",
+                                "imageType": "STATIC"
+                            },
+                            "type": "IMAGE",
+                            "isHighlighted": false,
+                            "systemAction": "DEFAULT_ACTION"
+                        },
+                        {
+                            "softButtonID": 1023,
+                            "text": "本地",
+                            "type": "TEXT",
+                            "isHighlighted": false,
+                            "systemAction": "DEFAULT_ACTION"
+                        },
+                        {
+                            "softButtonID": 1024,
+                            "text": "歌单",
+                            "type": "TEXT",
+                            "isHighlighted": false,
+                            "systemAction": "DEFAULT_ACTION"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "trigger": "button",
+            "identifier": 1023,
+            "handler": {
+                "name": "Show",
+                "parameters": {
+                    "mainField1": "本地  Song's Name",
+                    "mainField2": "Artist's Name",
+                    "mediaTrack": "2/7",
+                    "mediaClock": "03:07"
+                }
+            }
+        },
+        {
+            "trigger": "button",
+            "identifier": 1024,
+            "handler": {
+                "name": "PerformInteraction",
+                "parameters": {
+                    "interactionMode": "BOTH",
+                    "initialText": "请选择播放列表",
+                    "initialPrompt": [
+                        {
+                            "type": "TEXT",
+                            "text": "请选择播放列表"
+                        }
+                    ],
+                    "timeout": 20000,
+                    "timeoutPrompt": [
+                        {
+                            "type": "TEXT",
+                            "text": "时间快跑光了"
+                        }
+                    ],
+                    "interactionChoiceSetIDList": [
+                        1212
+                    ]
+                }
+            }
+        },
+        {
+            "trigger": "choice",
+            "identifier": 1011,
+            "handler": {
+                "parameters": {
+                    "duration": 7000,
+                    "alertText1": "我喜欢听",
+                    "playTone": true,
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "你选择了我喜欢听"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        },
+        {
+            "trigger": "choice",
+            "identifier": 1012,
+            "handler": {
+                "parameters": {
+                    "duration": 7000,
+                    "alertText1": "福特定制",
+                    "playTone": true,
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "你选择了福特定制"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        },
+        {
+            "trigger": "command",
+            "identifier": 1011,
+            "handler": {
+                "parameters": {
+                    "duration": 7000,
+                    "alertText1": "随便听听",
+                    "playTone": true,
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "你选择了随便听听"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        },
+        {
+            "trigger": "button",
+            "buttonname": "SEEKLEFT",
+            "handler": {
+                "parameters": {
+                    "duration": 7000,
+                    "alertText1": "上一首",
+                    "playTone": true,
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "上一首"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        },
+        {
+            "trigger": "button",
+            "buttonname": "SEEKRIGHT",
+            "handler": {
+                "parameters": {
+                    "duration": 7000,
+                    "alertText1": "下一首",
+                    "playTone": true,
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "下一首"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        }
+    ]
+}

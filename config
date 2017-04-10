@@ -1,0 +1,59 @@
+{
+    "apis": [
+        {
+            "name": “Show",
+            "parameters": {
+                "mainField1": "this is a demo",
+                "mainField2": "DEMO",
+                "softButtons": [
+                    {
+                        "type": "TEXT",
+                        "text": "Alert",
+                        "isHighlighted": false,
+                        "softButtonID": 101,
+                        "systemAction": "DEFAULT_ACTION"
+                    }
+                ]
+            }
+        }
+    ],
+    "actions": [
+        {
+            "trigger": "button",
+            "identifier": 101,
+            "handler": {
+                "parameters": {
+                    "softButtons": [
+                        {
+                            "softButtonID": 1022,
+                            "image": {
+                                "value": "0xD0",
+                                "imageType": "DYNAMIC"
+                            },
+                            "text": "text",
+                            "type": "BOTH",
+                            "isHighlighted": false,
+                            "systemAction": "DEFAULT_ACTION"
+                        }
+                    ],
+                    "duration": 7,
+                    "alertText1": "alert text1",
+                    "playTone": true,
+                    "alertText2": "alert text2",
+                    "alertText3": "alert Text3",
+                    "ttsChunks": [
+                        {
+                            "type": "TEXT",
+                            "text": "this is a alert demo"
+                        },
+                        {
+                            "type": "TEXT",
+                            "text": "this is a alert demo2"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        }
+    ]
+}

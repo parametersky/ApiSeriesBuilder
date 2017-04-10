@@ -1,0 +1,34 @@
+{
+    "apis": [
+        {
+            "name": “Show",
+            "parameters": {
+                "mainField1": "this is a demo",
+                "mainField2": "DEMO",
+                "softButtons": [
+                    {
+                        "type": "TEXT",
+                        "text": "Alert",
+                        "isHighlighted": false,
+                        "softButtonID": 101,
+                        "systemAction": "DEFAULT_ACTION"
+                    }
+                ]
+            }
+        }
+    ],
+    "actions": [
+        {
+            "trigger": "button",                            "text": "this is a alert demo"
+                        },
+                        {
+                            "type": "TEXT",
+                            "text": "this is a alert demo2"
+                        }
+                    ]
+                },
+                "name": "Alert"
+            }
+        }
+    ]
+}
